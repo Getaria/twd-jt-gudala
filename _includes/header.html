@@ -47,6 +47,8 @@
               {% endfor %}
             </div>
           </li>
+          {% else %}
+          <li><a href="{{ item.url }}"><div>{{ item.title }}</div></a>
           {% endif %}
           {% endfor %}
 <!--
