@@ -38,7 +38,7 @@
               <ul>
                 <li class="mega-menu-title"><a href="#"><div>{{ submenu.title }}</div></a>
                   <ul>
-                    {% for subitem in submenu[0].item %}
+                    {% for subitem in submenu.item[0] %}
                     <li><a href="{{ subitem.url }}"><div>{{ subitem.title }}</div></a></li>
                     {% endfor %}
                   </ul>
