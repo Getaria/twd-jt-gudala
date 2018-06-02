@@ -32,9 +32,20 @@
             </ul>
           </li>
           {% elsif item.submenu.size > 1 %}
+          {{ item.submenu }}
           <li class="mega-menu"><a href="{{ item.url }}"><div>{{ item.title }}</div></a>
             <div class="mega-menu-content style-2 col-{{ item.submenu.size}} clearfix">
-              
+              {% for submenu in item.submenu %}
+              <ul>
+                {% for subitem in item.submenu %}
+                <li class="mega-menu-title"><a href="#"><div>{{ submenu.title }}</div></a>
+                  <ul>
+                    <li><a href="#"><div></div></a></li>
+                  </ul>
+                </li>
+                {% endfor %}
+              </ul>
+              {% endfor %}
             </div>
           </li>
           {% endif %}
