@@ -1,1 +1,40 @@
-{{ content }}
+<!DOCTYPE html>
+{% assign lang = page.lang | default: "eu" %}
+<html dir="ltr" lang="{{ lang }}">
+
+{% include head.html %}
+
+<body class="stretched">
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+    {% include header.html %}
+
+		<!-- Content
+		============================================= -->
+		<section id="content">
+
+			<div class="content-wrap">
+
+				{{ content }}
+
+			</div>
+
+		</section><!-- #content end -->
+
+		{% include footer.html %}
+
+	</div><!-- #wrapper end -->
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script type="text/javascript" src="assets/js/functions.js"></script>
+
+</body>
+</html>
