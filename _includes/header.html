@@ -22,7 +22,7 @@
         <ul>
           {% assign lang = page.lang | default: "eu" %}
           {% assign menu = site.data.menu.items | where: "language", lang %}
-          {% for item in menu %}
+          {% for item in menu[0].item %}
           <li class="mega-menu"><a href="{{ item.url }}"><div>{{ item.title }}</div></li>
           {% endfor %}
           <!--
