@@ -25,7 +25,7 @@
           {% for item in menu[0].item %}
           <li><a href="{{ item.url }}"><div>{{ item.title }}</div></a>
             <ul>
-              {% for subitem in item.submenu %}
+              {% for subitem in item.submenu.item %}
               <li><a href="{{ subitem.url }}"><div>{{ subitem.title }}</div></a></li>
               {% endfor %}
             </ul>
