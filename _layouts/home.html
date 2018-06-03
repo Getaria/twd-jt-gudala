@@ -18,7 +18,34 @@
 
 			<div class="content-wrap">
 
-				
+        <div class="container clearfix">
+
+					<!-- Post Content
+					============================================= -->
+					<div class="postcontent nobottommargin clearfix">
+
+						<!-- Posts
+						============================================= -->
+						<div id="posts" class="small-thumbs">
+
+              {% for post in site.posts %}
+                {% include post-entry.html %}
+              {% endfor %}
+
+						</div><!-- #posts end -->
+
+						<!-- Pagination
+						============================================= -->
+						<ul class="pager nomargin">
+							<li class="previous"><a href="#">&larr; Older</a></li>
+							<li class="next"><a href="#">Newer &rarr;</a></li>
+						</ul><!-- .pager end -->
+
+					</div><!-- .postcontent end -->
+
+					{% include sidebar-right.html %}
+
+				</div>
 
 			</div>
 
