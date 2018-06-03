@@ -1,9 +1,4 @@
 <div class="entry clearfix">
-  {% if post.image %}
-  <div class="entry-image">
-    <a href="{{ post.image.url }}" data-lightbox="image"><img class="image_fade" src="{{ post.image.url }}" alt="{{ post.image.alt }}"></a>
-  </div>
-  {% endif %}
   <div class="entry-c">
     <div class="entry-title">
       <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
@@ -16,4 +11,9 @@
       <a href="{{ post.url }}"class="more-link">Read More</a>
     </div>
   </div>
+  {% if post.image %}
+  <div class="entry-image">
+    <a href="{{ post.image.url }}" data-lightbox="image"><img class="image_fade" src="{{ post.image.url }}" alt="{{ post.image.alt }}"></a>
+  </div>
+  {% endif %}
 </div>
