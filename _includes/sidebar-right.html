@@ -3,12 +3,10 @@
 <div class="sidebar nobottommargin col_last clearfix">
   <div class="sidebar-widgets-wrap">
 
-    {% assign widgets = site.widgets | where: "lang", page.language %}
     {{ widgets.size }}
-    {% for item in widgets %}
-      {% if page.sidebar_right contains item.id %}
-      {% include widget.html widget=item %}
-      {% endif %}
+    {% for item in page.sidebar_right %}
+      {% assign widget = site.widgets | where: "lang", page.lang | where: "id", item %}
+      {% include widget.html param=widget[0] %}
     {% endfor %}
 
   </div>
