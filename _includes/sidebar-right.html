@@ -6,6 +6,7 @@
     {% assign widgets = site.widgets | where: "lang", page.lang %}
     {% for item in widgets %}
       {% if page.sidebar_right contains item.id %}
+      {{ page.sidebar_right }}
         {% include widget.html widget=item %}
       {% endif %}
     {% endfor %}
