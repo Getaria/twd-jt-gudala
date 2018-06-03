@@ -6,7 +6,7 @@
     {{ widgets.size }}
     {% for item in page.sidebar_right %}
       {% assign widget = site.widgets | where: "lang", page.lang | where: "id", item %}
-      {% include widget.html param=widget[0] %}
+      {% include widget.html param=widget %}
     {% endfor %}
 
   </div>
