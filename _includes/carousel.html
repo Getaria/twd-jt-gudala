@@ -4,16 +4,12 @@
 
 <div id="{{ include.title }}" class="owl-carousel image-carousel">
 
-  {% assign cols = site.collections %}
-  {% for col in cols %}
-    {% if col.label == include.items %}
-      {% assign items = col | where: "lang", page.lang %}
-      {% for item in items %}
-      <div class="oc-item">
-        <a href="#"><img src="{{ item.url }}" alt="{{ item.image.alt }}"></a>
-      </div>
-      {% endfor %}
-    {% endif %}
+  {% assign items = site.collections | where: "label", include.items | first %}
+
+  {% for item in items %}
+  <div class="oc-item">
+    <a href="#"><img src="{{ item.url }}" alt="{{ item.image.alt }}"></a>
+  </div>
   {% endfor %}
 
 </div>
