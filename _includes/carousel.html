@@ -4,11 +4,11 @@
 
 <div id="{{ include.title }}" class="owl-carousel image-carousel">
 
-  {% assign items = site.documents | where: "collection", include.items %}
+  {% assign items = site.documents | where: "collection", include.items | where: "lang", page.lang %}
   {% for item in items %}
   {{ item }}
   <div class="oc-item">
-    <a href="#"><img src="{{ item.image.url }}" alt="{{ item.image.alt }}"></a>
+    <a href="{{ item.link }}"><img src="{{ item.image.url }}" alt="{{ item.image.alt }}"></a>
   </div>
   {% endfor %}
 
