@@ -4,7 +4,7 @@
 
 <div id="{{ include.title }}" class="owl-carousel image-carousel">
 
-  {% assign collection = site.collections | where: "label", include.items | first %}
+  {% assign collection = site.collections | where: "label", include.items %}
   {{ collection }}
   {% assign items = collection.docs | where: "lang", page.lang %}
   {% for item in items %}
