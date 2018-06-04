@@ -22,6 +22,14 @@
 
 			</div>
 
+      {% for section in page.after_content_sections %}
+      <section class="bottommargin">
+        <div class="container clearfix">
+          {% include {{ section.include }} title=section.title items=section.items %}
+        </div>
+      </section>
+      {% endfor %}
+
 		</section><!-- #content end -->
 
 		{% include footer.html %}
