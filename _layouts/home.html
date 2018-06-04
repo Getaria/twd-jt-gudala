@@ -54,7 +54,7 @@
     {% for section in page.after_content_sections %}
     <section class="bottommargin">
       <div class="container clearfix">
-        {{ section }}
+        {{ section.include }} {{ section.title }} {{ section.items }}
       </div>
     </section>
     {% endfor %}
