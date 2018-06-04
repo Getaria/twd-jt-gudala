@@ -43,14 +43,6 @@
 
 					</div><!-- .postcontent end -->
 
-          {% for section in page.after_content_sections %}
-          <section class="bottommargin">
-            <div class="container clearfix">
-              {{ section.include }} {{ section.title }} {{ section.items }}
-            </div>
-          </section>
-          {% endfor %}
-
 					{% include sidebar-right.html %}
 
 				</div>
@@ -58,6 +50,14 @@
 			</div>
 
 		</section><!-- #content end -->
+
+    {% for section in page.after_content_sections %}
+    <section class="bottommargin">
+      <div class="container clearfix">
+        {{ section }}
+      </div>
+    </section>
+    {% endfor %}
 
 		{% include footer.html %}
 
