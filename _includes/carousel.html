@@ -1,0 +1,41 @@
+<div class="fancy-title title-center title-dotted-border">
+	<h3>Image Carousel</h3>
+</div>
+
+<div id="{{ include.title }}" class="owl-carousel image-carousel">
+
+  {% assign items = site.{{ include.collection }} | where: "lang", page.lang %}
+  {% for item in items %}
+	<div class="oc-item">
+		<a href="#"><img src="{{ item.image.url }}" alt="{{ item.image.alt }}"></a>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+
+	jQuery(document).ready(function($) {
+
+		var ocImages = $("#{{ include.title }}");
+
+		ocImages.owlCarousel({
+			margin: 20,
+			nav: true,
+			navText: ['<i class="icon-angle-left"></i>','<i class="icon-angle-right"></i>'],
+			autoplay: false,
+			autoplayHoverPause: true,
+			dots: false,
+			navRewind: false,
+			responsive:{
+				0:{ items:2 },
+				600:{ items:3 },
+				1000:{ items:4 },
+				1200:{ items:5 }
+			}
+		});
+
+	});
+
+</script>
+
+<div class="clear"></div>
